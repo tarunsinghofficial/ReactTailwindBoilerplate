@@ -9,7 +9,7 @@ function QuoteStep() {
         <div className="container mx-auto max-w-[70rem] p-4 flex flex-col gap-10 items-center justify-center">
             <div className="flex flex-col md:flex-row lg:flex-row gap-10 items-center justify-center">
                 <div className="w-[10em] md:w-[40em] lg:w-[70em]">
-                    <img src={second} alt='quote' />
+                    <img src={second} alt='mylogo' />
                 </div>
                 <div className="flex flex-col justify-evenly max-w-2xl gap-10">
                     <div>
