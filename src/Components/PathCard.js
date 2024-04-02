@@ -11,7 +11,7 @@ const PathCard = ({ logo, title, description, tag, isSelected, onSelect }) => {
                 <div>
                     <img src={logo}
                         className="w-28 h-28"
-                        alt="Path image"
+                        alt="mylogo"
                     />
                 </div>
             </div>

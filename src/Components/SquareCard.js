@@ -5,7 +5,7 @@ const SquareCard = ({ icon, title, level, isSelected, onSelect }) => {
         <div className={`hover:cursor-pointer w-[10rem] h-[10rem] lg:w-[15rem] lg:h-[15rem] hover:border-2 hover:border-[#f6c855] hover:shadow-md overflow-hidden rounded-[7px] border border-gray-200 bg-white ${isSelected ? 'border-2 border-[#f6c855] shadow-md' : 'hover:border-[#E2D4B2] hover:shadow-md'}`} onClick={onSelect}>
             <div className="flex flex-col items-center text-center gap-2">
                 <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt=""
+                    alt="mylogo"
                     className="w-full h-auto"
                 />
                 <div>
