@@ -1,5 +1,4 @@
 import React from 'react'
-import CustomButton from './CustomButton'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import second from '../assets/2.png'
