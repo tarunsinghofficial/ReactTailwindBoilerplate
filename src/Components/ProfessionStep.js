@@ -1,53 +1,53 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ListCard from './ListCard';
-import { faSchool } from '@fortawesome/free-solid-svg-icons';
+import { faBuildingColumns, faGraduationCap, faBolt, faSchool, faUser, faUserTie } from '@fortawesome/free-solid-svg-icons';
 
 const data = [
     {
         id: 1,
         icon: faSchool,
         title: "Student",
-        expandedTitle: "or soon to be enrolled"
+        expandedTitle: "or soon to be enrolled",
+        color: "text-yellow-400"
     },
     {
         id: 2,
-        icon: faSchool,
-        title: "Student",
-        expandedTitle: "or soon to be enrolled"
+        icon: faUserTie,
+        title: "Professional",
+        expandedTitle: "pursuing a career",
+        color: "text-green-300"
     },
     {
         id: 3,
-        icon: faSchool,
-        title: "Student",
-        expandedTitle: "or soon to be enrolled"
+        icon: faUser,
+        title: "Parent",
+        expandedTitle: "of a school age child",
+        color: "text-blue-600"
     },
     {
         id: 4,
-        icon: faSchool,
-        title: "Student",
-        expandedTitle: ""
+        icon: faGraduationCap,
+        title: "Lifelong learner",
+        expandedTitle: "",
+        color: "text-green-600"
     },
     {
         id: 5,
-        icon: faSchool,
-        title: "Student",
-        expandedTitle: ""
+        icon: faBuildingColumns,
+        title: "Teacher",
+        expandedTitle: "",
+        color: "text-red-600"
     },
     {
         id: 6,
-        icon: faSchool,
-        title: "Student",
-        expandedTitle: ""
+        icon: faBolt,
+        title: "Other",
+        expandedTitle: "",
+        color: "text-black"
     },
 ];
 
-function ProfessionStep() {
-    const [selectedItem, setSelectedItem] = useState(null);
-
-    const handleSelectItem = (id) => {
-        setSelectedItem(id);
-    };
-
+function ProfessionStep({ onSelectItem, selectedItem }) {
     return (
         <div className="container mx-auto p-4">
             <div className="flex flex-col gap-5 items-center justify-center">
@@ -61,7 +61,8 @@ function ProfessionStep() {
                             expandTitle={item.expandedTitle} 
                             icon={item.icon} 
                             isSelected={selectedItem === item.id} 
-                            onSelect={() => handleSelectItem(item.id)} 
+                            onSelect={() => onSelectItem(item.id)} 
+                            iconColor={item.color}
                         />
                     ))}
                 </div>

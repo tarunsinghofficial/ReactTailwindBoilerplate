@@ -13,6 +13,7 @@ import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
   const [currentStep, setCurrentStep] = useState(1);
+  const [selectedItem, setSelectedItem] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -27,14 +28,20 @@ function App() {
 
   const handleNextStep = () => {
     setCurrentStep(prevStep => prevStep + 1);
+    setSelectedItem(null);
   };
 
   const handlePreviousStep = () => {
     setCurrentStep(prevStep => prevStep - 1);
+    setSelectedItem(null);
+  };
+
+  const handleSelectItem = (id) => {
+    setSelectedItem(id);
   };
 
   return (
-    <div className='w-full h-screen space-y-5 flex flex-col items-center justify-around'>
+    <>
       <div className='relative top-2 md:top-4 lg:top-4 container mx-auto flex justify-center'>
         {currentStep > 1 && currentStep < 6 && (
           <div className='hover:cursor-pointer absolute left-2 lg:left-20 top-2' onClick={handlePreviousStep}>
@@ -47,21 +54,23 @@ function App() {
           </div>
         )}
       </div>
-      <div className="flex flex-col items-center justify-center">
-        {currentStep === 1 && <ProfessionStep />}
-        {currentStep === 2 && <InterestStep />}
-        {currentStep === 3 && <PlaceStep />}
-        {currentStep === 4 && <MathStep />}
-        {currentStep === 5 && <QuoteStep />}
-        {isLoading && <AnimatedStep />}
-        {currentStep === 7 && <FinalStep />}
+      <div className='w-full h-screen mt-10 lg:mt-0 flex flex-col items-center justify-evenly'>
+        <div className="flex flex-col items-center justify-center">
+          {currentStep === 1 && <ProfessionStep onSelectItem={handleSelectItem} selectedItem={selectedItem} />}
+          {currentStep === 2 && <InterestStep onSelectItem={handleSelectItem} selectedItem={selectedItem} />}
+          {currentStep === 3 && <PlaceStep />}
+          {currentStep === 4 && <MathStep />}
+          {currentStep === 5 && <QuoteStep />}
+          {isLoading && <AnimatedStep />}
+          {currentStep === 7 && <FinalStep />}
+        </div>
+        <div className='pb-5'>
+          {!isLoading && currentStep < 7 && (
+            <CustomButton onClick={handleNextStep}>Continue</CustomButton>
+          )}
+        </div>
       </div>
-      <div className='pb-10'>
-        {!isLoading && currentStep < 7 && (
-          <CustomButton onClick={handleNextStep}>Continue</CustomButton>
-        )}
-      </div>
-    </div>
+    </>
   );
 }
 

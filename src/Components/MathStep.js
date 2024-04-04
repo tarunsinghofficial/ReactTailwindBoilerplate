@@ -5,25 +5,25 @@ import { faSchool } from '@fortawesome/free-solid-svg-icons';
 const data = [
     {
         id: 1,
-        icon: faSchool,
+        bgImage: "https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa",
         title: "Arithmetic",
         level: "Introductory"
     },
     {
         id: 2,
-        icon: faSchool,
+        bgImage: "https://images.unsplash.com/photo-1632207190829-a97e41017175",
         title: "Basic Algebra",
         level: "Foundational"
     },
     {
         id: 3,
-        icon: faSchool,
+        bgImage: "https://images.unsplash.com/photo-1542621334-a254cf47733d",
         title: "Intermediate Algebra",
         level: "Intermediate"
     },
     {
         id: 4,
-        icon: faSchool,
+        bgImage: "https://images.unsplash.com/photo-1596495577886-d920f1fb7238",
         title: "Calculus",
         level: "Advanced"
     },
@@ -47,7 +47,7 @@ function MathStep() {
                             key={item.id} 
                             title={item.title} 
                             level={item.level} 
-                            icon={item.icon} 
+                            bgImage={item.bgImage} 
                             isSelected={selectedItem === item.id} 
                             onSelect={() => handleSelectItem(item.id)} 
                         />

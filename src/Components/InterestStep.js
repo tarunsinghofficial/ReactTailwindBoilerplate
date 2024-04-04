@@ -1,53 +1,41 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ListCard from './ListCard';
-import { faSchool } from '@fortawesome/free-solid-svg-icons';
+import { faBolt, faBullseye, faChartLine, faEarthOceania, faRetweet } from '@fortawesome/free-solid-svg-icons';
 
 const data = [
     {
         id: 1,
-        icon: faSchool,
-        title: "Student",
-        expandedTitle: "or soon to be enrolled"
+        icon: faChartLine,
+        title: "Learning specific skills to advance my career",
+        color: "text-blue-600"
     },
     {
         id: 2,
-        icon: faSchool,
-        title: "Student",
-        expandedTitle: "or soon to be enrolled"
+        icon: faEarthOceania,
+        title: "Exploring new topics I'm interested in",
+        color: "text-blue-400"
     },
     {
         id: 3,
-        icon: faSchool,
-        title: "Student",
-        expandedTitle: "or soon to be enrolled"
+        icon: faRetweet,
+        title: "Refreshing my math foundations",
+        color: "text-green-600"
     },
     {
         id: 4,
-        icon: faSchool,
-        title: "Student",
-        expandedTitle: ""
+        icon: faBullseye,
+        title: "Excercising my brain to stay sharp",
+        color: "text-red-500"
     },
     {
         id: 5,
-        icon: faSchool,
-        title: "Student",
-        expandedTitle: ""
-    },
-    {
-        id: 6,
-        icon: faSchool,
-        title: "Student",
-        expandedTitle: ""
+        icon: faBolt,
+        title: "Something else",
+        color: "text-yellow-600"
     },
 ];
 
-function InterestStep() {
-    const [selectedItem, setSelectedItem] = useState(null);
-
-    const handleSelectItem = (id) => {
-        setSelectedItem(id);
-    };
-
+function InterestStep({ onSelectItem, selectedItem }) {
     return (
         <div className="container mx-auto p-4">
             <div className="flex flex-col gap-5 items-center justify-center">
@@ -60,8 +48,9 @@ function InterestStep() {
                             title={item.title} 
                             expandTitle={item.expandedTitle} 
                             icon={item.icon} 
+                            iconColor={item.color}
                             isSelected={selectedItem === item.id} 
-                            onSelect={() => handleSelectItem(item.id)} 
+                            onSelect={() => onSelectItem(item.id)} 
                         />
                     ))}
                 </div>

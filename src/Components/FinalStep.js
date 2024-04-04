@@ -4,14 +4,14 @@ import PathCard from './PathCard'
 const data = [
     {
         id: 1,
-        logo: "https://images.unsplash.com/photo-1472289065668-ce650ac443d2?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        bgImage: "https://images.unsplash.com/photo-1509228627152-72ae9ae6848d",
         title: "Foundational Math",
         description: "Build your foundational skills in algebra, geometry and probability.",
         tag: "Most popular"
     },
     {
         id: 2,
-        logo: "https://images.unsplash.com/photo-1472289065668-ce650ac443d2?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        bgImage: "https://plus.unsplash.com/premium_photo-1683887033781-29d27474b5dd",
         title: "Mathematical Thinking",
         description: "Build your foundational skills in algebra, geometry and probability.",
         tag: ""
@@ -33,10 +33,10 @@ function FinalStep() {
                 <p className="text-[#555555] text-md md:text-lg lg:text-xl text-center">Choose one to get started. You can switch anytime.</p>
                 <div className="mt-8 flex flex-col md:flex-row lg:flex-row gap-5 items-center">
                     {data.map((item) => (
-                        <PathCard key={item.id} title={item.title} description={item.description} logo={item.logo} tag={item.tag}
-                        isSelected={selectedItem === item.id} 
-                            onSelect={() => handleSelectItem(item.id)} 
-                             />
+                        <PathCard key={item.id} title={item.title} description={item.description} bgImage={item.bgImage} tag={item.tag}
+                            isSelected={selectedItem === item.id}
+                            onSelect={() => handleSelectItem(item.id)}
+                        />
                     ))}
                 </div>
             </div>
