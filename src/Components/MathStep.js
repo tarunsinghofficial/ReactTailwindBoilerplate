@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import SquareCard from './SquareCard';
-import { faSchool } from '@fortawesome/free-solid-svg-icons';
 
 const data = [
     {
